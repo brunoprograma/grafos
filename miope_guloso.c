@@ -53,14 +53,14 @@ int visitado(int *vetor, int tam, int num) {
 }
 
 void guloso_adjacencia(int *matriz, int lin, int col) {
-	int i, visitados[lin], i_vis = 0, distancia = 0,
-	(*p_matriz)[lin][col] = (int (*)[lin][col]) matriz;
+    int i, visitados[lin], i_vis = 0, distancia = 0,
+    (*p_matriz)[lin][col] = (int (*)[lin][col]) matriz;
     struct Ivalor proximo;
 
     for (i = 0; i < lin; i++)
         visitados[i] = -1;
 
-	for (i = 0; i < lin; i++) {
+    for (i = 0; i < lin; i++) {
         visitados[i_vis++] = i;
         proximo = menor_positivo((*p_matriz)[i], col);
 
@@ -73,9 +73,9 @@ void guloso_adjacencia(int *matriz, int lin, int col) {
             printf("%d\n\n", i+1);
             break;
         }
-	}
+    }
 
-	printf("Distância: %d\n\n\n", distancia);
+    printf("Distância: %d\n\n\n", distancia);
 }
 
 struct Ivalor loc_destino(int *matriz, int lin, int col, int atual, int indice, int valor) {
@@ -104,14 +104,14 @@ struct Ivalor loc_destino(int *matriz, int lin, int col, int atual, int indice, 
 }
 
 void guloso_incidencia(int *matriz, int lin, int col) {
-	int i, visitados[lin], i_vis = 0, distancia = 0,
-	(*p_matriz)[lin][col] = (int (*)[lin][col]) matriz;
+    int i, visitados[lin], i_vis = 0, distancia = 0,
+    (*p_matriz)[lin][col] = (int (*)[lin][col]) matriz;
     struct Ivalor proximo, aresta;
 
     for (i = 0; i < lin; i++)
         visitados[i] = -1;
 
-	for (i = 0; i < lin; i++) {
+    for (i = 0; i < lin; i++) {
         visitados[i_vis++] = i;
         aresta = menor_positivo((*p_matriz)[i], col);
         proximo = loc_destino(matriz, lin, col, i, aresta.indice, aresta.valor);
@@ -125,13 +125,13 @@ void guloso_incidencia(int *matriz, int lin, int col) {
             printf("%d\n\n", i+1);
             break;
         }
-	}
+    }
 
-	printf("Distância: %d\n\n\n", distancia);
+    printf("Distância: %d\n\n\n", distancia);
 }
 
 int main(void) {
-	int ma1[5][5] = {{0, 30, -15, 0, 20},
+    int ma1[5][5] = {{0, 30, -15, 0, 20},
                      {-30, 0, -10, 50, 0},
                      {15, 10, 0, 5, -10},
                      {0, 50, -5, 0, -30},
