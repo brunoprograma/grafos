@@ -168,5 +168,5 @@ int main(void) {
     print_matriz(mi2, 7, 9);
     guloso_incidencia(mi2, 7, 9);
 
-	return 0;
+    return 0;
 }
